@@ -37,11 +37,33 @@
                     <span>Compras</span>
                 </a>
             </li>
-            <li>
+            <li class="has-submenu">
                 <a href="#">
                     <i class="fa fa-users"></i>
                     <span>Productores</span>
                 </a>
+                <ul class="submenu">
+                    <li>
+                        <a href="#">
+                            <span>Productores</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Grupo de productores</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Predios</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Balance de cuentas</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a href="#">

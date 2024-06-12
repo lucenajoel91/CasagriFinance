@@ -15,7 +15,7 @@
                 </a>
                 <ul class="submenu">
                     <li>
-                        <a href="#">
+                        <a href="{{ url('Productos') }}">
                             <span>Productos</span>
                         </a>
                     </li>
@@ -44,7 +44,7 @@
                 </a>
                 <ul class="submenu">
                     <li>
-                        <a href="#">
+                        <a href="{{ url('Productores') }}">
                             <span>Productores</span>
                         </a>
                     </li>

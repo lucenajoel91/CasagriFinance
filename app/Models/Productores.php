@@ -24,7 +24,8 @@ class Productores extends Model
         'ciudad',
         'estado', 
         'pais', 
-        'Runoppa', // Agrega los demás campos aquí
+        'Runoppa',
+        'status', // Agrega los demás campos aquí
     ];
     public $timestamps = false; // Si deseas mantener los timestamps
 }

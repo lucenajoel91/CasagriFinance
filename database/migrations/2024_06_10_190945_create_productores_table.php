@@ -25,7 +25,9 @@ return new class extends Migration
             $table->string('ciudad');
             $table->string('estado');
             $table->string('pais');
-            $table->string('Runoppa');
+            $table->string('runoppa');
+            $table->string('status');
+            $table->decimal('BalanceUSD', 5, 2);
             $table->timestamps();
         });
     }

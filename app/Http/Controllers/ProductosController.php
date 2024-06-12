@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Productores;
+use App\Models\Productos;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class ProductoresController extends Controller
+class ProductosController extends Controller
 {
     public function __construct(){
         $this->middleware('auth');
     }
+
     public function index()
     {
-        $productores= Productores::all();
-        return view('modulos.productores.productores')->with('productores',$productores);
+        $productos= Productos::all();
+        return view('modulos.inventario.productos')->with('Productos',$productos);
     }
 
     /**
@@ -36,7 +36,7 @@ class ProductoresController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Productores $productores)
+    public function show(Productos $productos)
     {
         //
     }
@@ -44,7 +44,7 @@ class ProductoresController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Productores $productores)
+    public function edit(Productos $productos)
     {
         //
     }
@@ -52,7 +52,7 @@ class ProductoresController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Productores $productores)
+    public function update(Request $request, Productos $productos)
     {
         //
     }
@@ -60,7 +60,7 @@ class ProductoresController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Productores $productores)
+    public function destroy(Productos $productos)
     {
         //
     }

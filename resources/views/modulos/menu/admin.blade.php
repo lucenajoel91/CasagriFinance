@@ -31,11 +31,28 @@
                     </li>
                 </ul>
             </li>
-            <li>
+            <li class="has-submenu">
                 <a href="#">
                     <i class="fa fa-shopping-cart"></i>
                     <span>Compras</span>
                 </a>
+                <ul class="submenu">
+                    <li>
+                        <a href="#">
+                            <span>Proveedores</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Orden de compras</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Embarques</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
             <li class="has-submenu">
                 <a href="#">
@@ -77,11 +94,23 @@
                     <span>Despachos</span>
                 </a>
             </li>
-            <li>
+            <li class="has-submenu">
                 <a href="#">
                     <i class="fa fa-gears"></i>
                     <span>Ajustes Generales</span>
                 </a>
+                <ul class="submenu">
+                    <li>
+                        <a href="{{ url('Usuarios') }}">
+                            <span>Usuarios</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Empresa</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a href="#">    

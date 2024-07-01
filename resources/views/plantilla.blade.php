@@ -140,30 +140,52 @@
   </script>
 
 <script>
+// JavaScript para activar la edición y ocultar el campo de texto
+$('.editable').click(function() {
+    const column = $(this).data('column');
+    const originalValue = $(this).text();
+    $(this).html(`<input type="text" value="${originalValue}" data-original="${originalValue}" data-column="${column}" class="edit-input">`);
+});
+
+</script>
+
+
+<script>
   $(".table").DataTable(
     {
     "language": {
-
       "sSearch": "Buscar:",
       "sEmptyTable": "No hay datos en la Tabla",
       "sZeroRecords": "No se encontraron resultados",
       "sInfo": "Mostrando registros del _START_ al _END_ de un total _TOTAL_",
       "SInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0",
       "sInfoFiltered": "(filtrando de un total de _MAX_ registros)",
-      "oPaginate": {
-      
+      "oPaginate": {   
         "sFirst": "Primero", 
         "sLast": "Último", 
         "sNext": "Siguiente",
         "sPrevious": "Anterior"
       },
-
       "sLoadingRecords": "Cargando...",
       "sLengthMenu": "Mostrar _MENU_ registros"
-    }
+    },
+      "responsive": false
+      ,"initComplete": function(settings, json) {
+        var lengthMenu = $(this).closest('.dataTables_wrapper').find('.dataTables_length');
+        var filterInput = $(this).closest('.dataTables_wrapper').find('.dataTables_filter');
+        lengthMenu.appendTo('.dataTables_length_wrapper');
+        filterInput.appendTo('.dataTables_filter_wrapper');
+      }
+      ,"drawCallback": function(settings) {
+        var pagination = $(this).closest('.dataTables_wrapper').find('.dataTables_paginate');
+        var info = $(this).closest('.dataTables_wrapper').find('.dataTables_info');
+        pagination.appendTo('.dataTables_paginate_wrapper');
+        info.appendTo('.dataTables_info_wrapper');
+      }
+      // ,'lengthChange': false
+      // ,'autoWidth'   : false
   }
-
-  );
+);
 </script>
 <!-- SweetAlert -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

@@ -2,13 +2,13 @@
 @section('content')
 <div class="content-wrapper"> 
     <section class="content-header">
-        <h1>Productores</h1>
+        <h1>Gestor de Usuarios</h1>
     </section>
 
     <section class="content">
         <div class="box">
             <div class="box-header">
-                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#CrearProductor">Crear Productor</button>
+                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#CrearUsuario">Crear usuario</button>
 
             </div>
 
@@ -19,41 +19,37 @@
                             <th>ID</th>
                             <th>Cedula</th>
                             <th>Nombre y Apellido</th>
-                            <th>Estado</th>
-                            <th>ciudad</th>
+                            <th>Perfil</th>
                             <th>Email</th>
                             <th>Telefono</th>
-                            <th>Runoppa</th>
 
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                       @foreach($productores as $productor)
+                       @foreach($usuarios as $usuario)
                        
                             <tr>
-                                <td>{{$productor->idProd}}</td>
-                                <td>{{$productor->rif}}</td>
-                                <!-- <td><span class="editable" data-column="rif">{{$productor->rif}}</span></td> -->
-                                <td>{{$productor->nombre}}</td>
-                                <td>{{$productor->estado}}</td>
-                                <td>{{$productor->ciudad}}</td>
+                                <td>{{$usuario->id}}</td>
+                                <td>{{$usuario->documento}}</td>
+                                <td>{{$usuario->name}}</td>
                                 
-                                <td>{{$productor->email}}</td>
-                                <td>{{$productor->telefono}}</td>
-                                <td>{{$productor->runoppa}}</td>
+                                <td>{{$usuario->rol}}</td>
+                                
+                                <td>{{$usuario->email}}</td>
+                                <td>{{$usuario->telefono}}</td>
                                 <td>
-                                   <!-- <a href="Editarproductor/{{$productor->id}}">
-                                        <button class="btn btn-success EditarProductor" Did="{{$productor->idProd}}">
+                                   <a href="EditarUsuario/{{$usuario->id}}">
+                                        <button class="btn btn-success EditarClient" Did="{{$usuario->id}}">
                                             <i class="fa fa-pencil"></i>
                                         </button>
-                                   </a> -->
-                                    <button class="btn btn-danger Eliminar" Did="productor/{{$productor->idProd}}">
+                                   </a>
+                                    <button class="btn btn-danger Eliminar" Did="usuario/{{$usuario->id}}">
                                         <i class="fa fa-trash"></i>
                                     </button>
                                 </td>
                             </tr>
-                       
+                     
                        @endforeach
                     </tbody>
                 </table>
@@ -64,7 +60,7 @@
 </div>
 
 
-<div id="CrearProductor" class="modal fade">
+<div id="CrearUsuario" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <form action="" method="post">
@@ -125,5 +121,6 @@
     </div>
 
 </div>
+
 
 @endsection

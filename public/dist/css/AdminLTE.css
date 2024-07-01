@@ -623,6 +623,17 @@ a:focus {
     display: none !important;
     -webkit-transform: translateZ(0);
   }
+
+  .sidebar-mini.sidebar-collapse .sidebar-menu .has-submenu:hover .submenu {
+    display: block;
+    background: #1e282c; /* Asegúrate de que este color de fondo sea el mismo que el del menú principal */
+    position: absolute; /* Posiciona el submenu fuera del flujo normal del documento */
+    width: 200px; /* O el ancho que prefieras para tu submenu */
+    left: 50px; /* Ajusta esto para alinear con tu menú principal */
+    top: 0;
+    z-index: 1000; /* Asegúrate de que el z-index sea suficientemente alto para estar por encima de otros elementos */
+  }
+  
   .sidebar-mini.sidebar-collapse .main-header .logo {
     width: 50px;
   }

@@ -21,13 +21,14 @@
             <ul class="nav navbar-nav">
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                         {{ auth()->user()->name}}
                         <span class="hidden-xs"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-primary btn-flat">Perfil</a>
+                                <a href="{{url('Datos')}}" class="btn btn-primary btn-flat">Perfil</a>
                             </div>
                             <div class="pull-right">
                                 <a href="{{ route('logout')}}" onclick="event.preventDefault(); 

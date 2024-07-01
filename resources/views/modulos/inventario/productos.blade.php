@@ -7,75 +7,94 @@
 
     <section class="content">
         <div class="box">
-            <div class="box-header" >
-                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#CrearProducto" >Crear Producto</button>
+            <!-- <div class="box-header" >
+                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#CrearProducto">Crear Producto</button>
 
-            </div>
-
-            <div class="box-body" style="overflow-x: auto;">
-                <table class="table table-bordered table-hover table-striped dt-responsive">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Nombre</th>
-                            <th>Presentación</th>
-                            <th>Unidad de Negocio</th>
-                            <th>Línea</th>
-                            <th>Sublínea</th>
-                            <th>Categoría</th>
-                            <th>Componente</th>
-                            <th>Marca</th>
-                            <th>Maneja Lote</th>
-                            <th>Costo 1</th>
-                            <th>Costo 2</th>
-                            <th>Costo 3</th>
-                            <th>Precio Mayorista</th>
-                            <th>Precio Detal</th>
-                            <th>Precio Prepagado</th>
-                            <th>Precio Apartado</th>
-                            <th>Precio Piso</th>
-                            <th>Und/Hectáreas</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($Productos as $Producto)
+            </div> -->
+            
+            <div class="box-body">
+                <div class="dataTables_sticky_wrapper">
+                    <div class="dataTables_length_wrapper">
+                        <!-- El menú de longitud se moverá aquí por el callback 'initComplete' -->
+                    </div>
+                    <div class="dataTables_filter_wrapper">
+                        <!-- El campo de búsqueda se moverá aquí por el callback 'initComplete' -->
+                    </div>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="table table-bordered table-hover table-striped dt-responsive nowrap">
+                        <thead>
                             <tr>
-                                <td>{{$Producto->inventId}}</td>
-                                <td>{{$Producto->nombre}}</td>
-                                <td>{{$Producto->presentacion}}</td>
-                                <td>{{$Producto->unidadNeg}}</td>
-                                <td>{{$Producto->linea}}</td>
-                                <td>{{$Producto->sublinea}}</td>
-                                <td>{{$Producto->categoria}}</td>
-                                <td>{{$Producto->componente}}</td>
-                                <td>{{$Producto->marca}}</td>
-                                <td>{{$Producto->manejalote ? 'Sí' : 'No'}}</td>
-                                <td>{{$Producto->costo1}}</td>
-                                <td>{{$Producto->costo2}}</td>
-                                <td>{{$Producto->costo3}}</td>
-                                <td>{{$Producto->prcMayor}}</td>
-                                <td>{{$Producto->prcDetal}}</td>
-                                <td>{{$Producto->prcPrepagado}}</td>
-                                <td>{{$Producto->prcApartado}}</td>
-                                <td>{{$Producto->prcPiso}}</td>
-                                <td>{{$Producto->cantHa}}</td>
-                                <td>
-                                    <a href="EditarProducto/{{$Producto->id}}">
-                                        <button class="btn btn-success EditarProducto" Did="{{$Producto->idProd}}">
-                                            <i class="fa fa-pencil"></i>
-                                        </button>
-                                    </a>
-                                    <button class="btn btn-danger Eliminar" Did="Producto/{{$Producto->idProd}}">
-                                        <i class="fa fa-trash"></i>
-                                    </button>
-                                </td>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>Presentación</th>
+                                <th>Unidad de Negocio</th>
+                                <th>Línea</th>
+                                <th>Sublínea</th>
+                                <th>Categoría</th>
+                                <th>Componente</th>
+                                <th>Marca</th>
+                                <th>Maneja Lote</th>
+                                <th>Costo 1</th>
+                                <th>Costo 2</th>
+                                <th>Costo 3</th>
+                                <th>Precio Mayorista</th>
+                                <th>Precio Detal</th>
+                                <th>Precio Prepagado</th>
+                                <th>Precio Apartado</th>
+                                <th>Precio Piso</th>
+                                <th>Und/Hectáreas</th>
+                                <th>Editar</th>
                             </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-
+                        </thead>
+                        <tbody>
+                            @foreach($Productos as $Producto)
+                                <tr>
+                                    <td>{{$Producto->inventId}}</td>
+                                    <td>{{$Producto->nombre}}</td>
+                                    <td>{{$Producto->present}}</td>
+                                    <td>{{$Producto->unidadNeg}}</td>
+                                    <td>{{$Producto->linea}}</td>
+                                    <td>{{$Producto->sublinea}}</td>
+                                    <td>{{$Producto->categoria}}</td>
+                                    <td>{{$Producto->component}}</td>
+                                    <td>{{$Producto->marca}}</td>
+                                    <td>{{$Producto->manejalote ? 'Sí' : 'No'}}</td>
+                                    <td>{{$Producto->costo1}}</td>
+                                    <td>{{$Producto->costo2}}</td>
+                                    <td>{{$Producto->costo3}}</td>
+                                    <td>{{$Producto->prcMayor}}</td>
+                                    <td>{{$Producto->prcDetal}}</td>
+                                    <td>{{$Producto->prcPrepa}}</td>
+                                    <td>{{$Producto->prcApart}}</td>
+                                    <td>{{$Producto->prcPiso}}</td>
+                                    <td>{{$Producto->cantHa}}</td>
+                                    <td>
+                                        <a href="EditarProducto/{{$Producto->id}}">
+                                            <button class="btn btn-success EditarProducto" Did="{{$Producto->idProd}}">
+                                                <i class="fa fa-pencil"></i>
+                                            </button>
+                                        </a>
+                                        <!-- <button class="btn btn-danger Eliminar" Did="Producto/{{$Producto->idProd}}">
+                                            <i class="fa fa-trash"></i>
+                                        </button> -->
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <div class="dataTables_controls_wrapper">
+                    <div class="dataTables_info_wrapper">
+                    <!-- El mensaje de información se moverá aquí por el callback 'drawCallback' -->
+                    </div>
+                    <div class="dataTables_paginate_wrapper">
+                    <!-- Los controles de paginación se moverán aquí por el callback 'drawCallback' -->
+                    </div>
+                </div>
             </div>
+
+
 
         </div>
     </section>

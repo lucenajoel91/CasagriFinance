@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('predios', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('idProd'); // Campo llave de la tabla productores
+            $table->unsignedBigInteger('idProductor'); // Campo llave de la tabla productores
             $table->string('nombre');
+            $table->string('direccion');
             $table->string('sector');
             $table->string('municipio');
             $table->string('parroquia');
@@ -25,6 +26,8 @@ return new class extends Migration
             $table->decimal('ultSuperficieFin', 10, 2)->nullable(); // Ajusta la precisión según tus necesidades
             $table->string('ultCultivoFin')->nullable(); // Puedes cambiar el tipo según el contenido
             $table->timestamps();
+
+            $table->foreign('idProductor')->references('idProd')->on('productores');
         });
     }
 

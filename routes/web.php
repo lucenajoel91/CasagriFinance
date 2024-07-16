@@ -6,6 +6,7 @@ use App\http\controllers\InicioController;
 use App\http\controllers\ProductoresController;
 use App\http\controllers\ProductosController;
 use App\http\controllers\UsuariosController;
+use App\http\controllers\ComprasController;
 
 Route::get('/Ingresar', function () {
     return view('modulos.login.login');
@@ -13,7 +14,7 @@ Route::get('/Ingresar', function () {
 
 Auth::routes();
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class,'index']);
 Route::get('Inicio',[InicioController::class,'index']);
 
 //Usuarios
@@ -29,5 +30,9 @@ Route::get('Productores',[ProductoresController::class,'index']);
 Route::get('Productos',[ProductosController::class,'index']);
 Route::post('Productos',[ProductosController::class,'store']);
 Route::get('EliminarProducto/{id}',[ProductosController::class,'destroy']);
+
+
+//Rutas productores
+Route::get('Ordenes',[ComprasController::class,'index']);
 
 

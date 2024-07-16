@@ -43,13 +43,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ url('Ordenes') }}">
                             <span>Orden de compras</span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <span>Embarques</span>
+                            <span>Recepciones</span>
                         </a>
                     </li>
                 </ul>
@@ -108,6 +108,11 @@
                     <li>
                         <a href="#">
                             <span>Empresa</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Moneda</span>
                         </a>
                     </li>
                 </ul>
